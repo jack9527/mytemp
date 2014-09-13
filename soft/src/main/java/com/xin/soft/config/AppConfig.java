@@ -8,6 +8,7 @@ import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
+import com.jfinal.plugin.spring.SpringPlugin;
 import com.xin.soft.controll.AdminController;
 import com.xin.soft.controll.RootController;
 import com.xin.soft.interceptor.GlobalInterceptor;
@@ -49,6 +50,10 @@ public class AppConfig extends JFinalConfig {
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(c3p0Plugin);
 		me.add(arp);
 		// arp.addMapping("blog", Blog.class); // 映射blog 表到 Blog模型
+		
+		//配置spirng plugin
+		SpringPlugin sp=new SpringPlugin();
+		me.add(sp);
 	}
 
 	/**
