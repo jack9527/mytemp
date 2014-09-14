@@ -10,7 +10,10 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.plugin.spring.SpringPlugin;
 import com.xin.soft.controll.AdminController;
+import com.xin.soft.controll.DemoController;
+import com.xin.soft.controll.ResourceController;
 import com.xin.soft.controll.RootController;
+import com.xin.soft.handler.ResourceHandler;
 import com.xin.soft.interceptor.GlobalInterceptor;
 
 /**
@@ -34,6 +37,10 @@ public class AppConfig extends JFinalConfig {
 		
 		  me.add("/", RootController.class); 
 		  me.add("/admin", AdminController.class);
+		  me.add("/demo",DemoController.class);
+		  
+		  //静态资源处理
+		  me.add("/resource",ResourceController.class);
 		 
 	}
 
@@ -67,6 +74,6 @@ public class AppConfig extends JFinalConfig {
 	 * 配置处理器
 	 */
 	public void configHandler(Handlers me) {
-		
+		//me.add(new ResourceHandler());
 	}
 }
